@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+.notes-app-container {
+  height: 100%;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.notes-list-container {
+  width: 500px;
+  cursor: pointer;
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.notes-heading-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  align-items:center
+}
+
+.notes-list-item-container {
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  max-height: 100px;
+}
+
+.notes-title {
+  margin: 8px 0;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.notes-description {
+  margin: 8px 0;
+  text-transform: capitalize;
+  letter-spacing: 0.2px;
+  line-height: 25px;
+}
+
+.action-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.action-field {
+  padding: 10px 30px;
+  background-color: #6a6aff;
+  border: none;
   color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.action-field-disabled {
+  background-color: #c7c2c2; 
+  cursor: not-allowed
 }
 
-@keyframes App-logo-spin {
-  from {
+.field-container {
+  width: 400px;
+  margin-bottom: 25px;
+  padding: 10px 20px;
+}
+
+.input-field {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+body nav {
+  position: sticky;
+  top: 0;
+}
+
+textarea {
+  resize: none;
+  height: 200px;
+}
+
+.loader {
+  width: 35px;
+  height: 35px;
+  border: 5px solid #c7c2c2;
+  border-bottom-color: #6a6aff;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.item-border {
+  border: 1px solid #c7c2c2;
+  border-radius: 6px;
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.text-ellipsis--2 {
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.centerlize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.align-right-corner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@keyframes rotation {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
+} 
+
+
+@media (max-width: 480px) {
+  .field-container {
+    width: 285px;
+  }
+
+  .notes-list-container {
+    width: 285px;
+  }
 }
+
